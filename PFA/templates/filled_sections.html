@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filled Sections</title>
+</head>
+<body>
+    <h2>Tips</h2>
+    <ul>
+        {% for tip in tips %}
+            <li>{{ tip.content }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Nutriments and Supplies</h2>
+    <ul>
+        {% for item in nutriments_and_supplies %}
+            <li>{{ item.content }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Emergency Contacts</h2>
+    <ul>
+        {% for contact in emergency_contacts %}
+            <li>{{ contact.name }} - {{ contact.phone_number }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

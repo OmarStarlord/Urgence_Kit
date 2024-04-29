@@ -1,0 +1,194 @@
+id,country,phone_number
+1,Afghanistan,119
+2,Albania,112
+3,Algeria,"17 (police), 14 (ambulance and fire)"
+4,Andorra,112
+5,Angola,"118 (police), 112 (emergency services)"
+6,Antigua and Barbuda,911
+7,Argentina,911
+8,Armenia,112
+9,Australia,000
+10,Austria,112
+11,Azerbaijan,112
+12,Bahamas,"919 or 911"
+13,Bahrain,999
+14,Bangladesh,999
+15,Barbados,511
+16,Belarus,102
+17,Belgium,112
+18,Belize,911
+19,Benin,"117 (police), 1669 (ambulance and fire)"
+20,Bhutan,"110 (police), 112 (ambulance and fire)"
+21,Bolivia,"110 (police), 118 (fire), 119 (ambulance)"
+22,Bosnia and Herzegovina,112
+23,Botswana,999
+24,Brazil,"190 (police), 192 (ambulance), 193 (fire)"
+25,Brunei,993
+26,Bulgaria,112
+27,Burkina Faso,"17 (police), 18 (fire)"
+28,Burundi,"117 (police), 112 (emergency services)"
+29,Cabo Verde,132
+30,Cambodia,"117 (police), 119 (fire), 115 (ambulance)"
+31,Cameroon,"117 (police), 118 (fire), 119 (ambulance)"
+32,Canada,911
+33,Central African Republic,"117 (police), 118 (fire), 119 (ambulance)"
+34,Chad,"17 (police), 18 (fire), 2251 (ambulance)"
+35,Chile,"133 (police), 132 (fire), 131 (ambulance)"
+36,China,"110 (police), 120 (ambulance), 119 (fire)"
+37,Colombia,123
+38,Comoros,"17 (police), 18 (fire)"
+39,Congo,"117 (police), 118 (fire)"
+40,Costa Rica,911
+41,Croatia,112
+42,Cuba,106
+43,Cyprus,112
+44,Czech Republic,112
+45,Denmark,112
+46,Djibouti,"17 (police), 18 (fire), 35 (ambulance)"
+47,Dominica,999
+48,Dominican Republic,911
+49,Ecuador,911
+50,Egypt,"122 (police), 123 (fire), 180 (ambulance)"
+51,El Salvador,911
+52,Equatorial Guinea,113
+53,Eritrea,113
+54,Estonia,112
+55,Eswatini,999
+56,Ethiopia,911
+57,Fiji,911
+58,Finland,112
+59,France,"112 or 15 (medical), 17 (police), 18 (fire)"
+60,Gabon,"1300 (police), 18 (fire)"
+61,Gambia,"117 (police), 118 (fire), 116 (ambulance)"
+62,Georgia,112
+63,Germany,112
+64,Ghana,"191 (police), 192 (fire), 193 (ambulance)"
+65,Greece,112
+66,Grenada,911
+67,Guatemala,"110 (police), 122 (fire), 123 (ambulance)"
+68,Guinea,"117 (police), 18 (fire)"
+69,Guinea-Bissau,"117 (police), 118 (fire), 119 (ambulance)"
+70,Guyana,911
+71,Haiti,"114 (police), 118 (fire), 116 (ambulance)"
+72,Honduras,"199 (police), 198 (fire), 195 (ambulance)"
+73,Hungary,112
+74,Iceland,112
+75,India,112
+76,Indonesia,"110 (police), 113 (fire), 118 (ambulance)"
+77,Iran,"110 (police), 125 (fire), 115 (ambulance)"
+78,Iraq,104
+79,Ireland,"112 or 999"
+80,Israel,"100 (police), 102 (fire), 101 (ambulance)"
+81,Italy,112
+82,Jamaica,119
+83,Japan,"110 (police), 119 (fire and ambulance)"
+84,Jordan,911
+85,Kazakhstan,112
+86,Kenya,"112 or 999"
+87,Kiribati,999
+88,Kuwait,112
+89,Kyrgyzstan,102
+90,Laos,"191 (police), 195 (ambulance and fire)"
+91,Latvia,112
+92,Lebanon,112
+93,Lesotho,123
+94,Liberia,911
+95,Libya,1515
+96,Liechtenstein,112
+97,Lithuania,112
+98,Luxembourg,112
+99,Madagascar,"117 (police), 118 (fire), 119 (ambulance)"
+100,Malawi,"997 (police), 998 (fire), 999 (ambulance)"
+101,Malaysia,999
+102,Maldives,119
+103,Mali,"17 (police), 18 (fire), 15 (ambulance)"
+104,Malta,112
+105,Marshall Islands,911
+106,Mauritania,"117 (police), 118 (fire), 101 (ambulance)"
+107,Mauritius,"114 (police), 115 (fire), 114 (ambulance)"
+108,Mexico,911
+109,Micronesia,911
+110,Moldova,902
+111,Monaco,112
+112,Mongolia,102
+113,Montenegro,112
+114,Morocco,"19 (police), 15 (ambulance), 15 (fire)"
+115,Mozambique,119
+116,Myanmar,199
+117,Namibia,112
+118,Nauru,110
+119,Nepal,"100 (police), 101 (fire), 102 (ambulance)"
+120,Netherlands,112
+121,New Zealand,111
+122,Nicaragua,"118 (police), 115 (ambulance)"
+123,Niger,"17 (police), 18 (fire), 15 (ambulance)"
+124,Nigeria,112
+125,North Korea,119
+126,North Macedonia,192
+127,Norway,112
+128,Oman,9999
+129,Pakistan,"15 (police), 16 (fire), 115 (ambulance)"
+130,Palau,911
+131,Panama,911
+132,Papua New Guinea,111
+133,Paraguay,911
+134,Peru,"105 (police), 116 (fire), 117 (ambulance)"
+135,Philippines,911
+136,Poland,112
+137,Portugal,112
+138,Qatar,999
+139,Romania,112
+140,Russia,112
+141,Rwanda,112
+142,Saint Kitts and Nevis,911
+143,Saint Lucia,999
+144,Saint Vincent and the Grenadines,999
+145,Samoa,999
+146,San Marino,112
+147,Sao Tome and Principe,112
+148,Saudi Arabia,999
+149,Senegal,"17 (police), 18 (fire), 15 (ambulance)"
+150,Serbia,112
+151,Seychelles,999
+152,Sierra Leone,999
+153,Singapore,999
+154,Slovakia,112
+155,Slovenia,112
+156,Solomon Islands,999
+157,Somalia,888
+158,South Africa,10111
+159,South Korea,112
+160,South Sudan,777
+161,Spain,112
+162,Sri Lanka,119
+163,Sudan,999
+164,Suriname,115
+165,Sweden,112
+166,Switzerland,112
+167,Syria,112
+168,Taiwan,"110 (police), 119 (fire and ambulance)"
+169,Tajikistan,112
+170,Tanzania,112
+171,Thailand,"191 (police), 199 (fire), 1554 (ambulance)"
+172,Timor-Leste,112
+173,Togo,"117 (police), 118 (fire), 819 (ambulance)"
+174,Tonga,911
+175,Trinidad and Tobago,999
+176,Tunisia,"197 (police), 198 (fire), 190 (ambulance)"
+177,Turkey,112
+178,Turkmenistan,112
+179,Tuvalu,911
+180,Uganda,112
+181,Ukraine,112
+182,United Arab Emirates,999
+183,United Kingdom,"999 or 112"
+184,United States,911
+185,Uruguay,911
+186,Uzbekistan,112
+187,Vanuatu,112
+188,Vatican City,112
+189,Venezuela,911
+190,Vietnam,"113 (police), 114 (fire), 115 (ambulance)"
+191,Yemen,194
+192,Zambia,999
+193,Zimbabwe,999

@@ -1,0 +1,76 @@
+id,type_of_catastrophe,content
+1,Earthquake,Emergency whistle or signal device
+2,Earthquake,Multi-tool or Swiss Army knife
+3,Earthquake,Dust masks for filtering contaminated air
+4,Earthquake,Portable toilet and sanitation supplies
+5,Earthquake,Emergency contact list and important documents stored in a waterproof container
+6,Flood,Waterproof containers for storing valuables
+7,Flood,Water purification tablets or filters
+8,Flood,Moisture-absorbing packets to protect important documents
+9,Flood,Mosquito repellent and insect bite relief
+10,Flood,Life vests or inflatable rafts for evacuation
+11,Hurricane,Waterproof tarps or plastic sheeting for temporary shelter
+12,Hurricane,Duct tape for quick repairs
+13,Hurricane,Whistle or air horn for signaling for help
+14,Hurricane,Solar-powered or hand-cranked emergency radio
+15,Hurricane,"Pet supplies including food, water, and medication"
+16,Tornado,Sturdy shoes or boots for protection against debris
+17,Tornado,Whistle or air horn for signaling rescuers
+18,Tornado,Cash in small denominations for emergency purchases
+19,Tornado,Copies of important documents such as insurance policies and identification
+20,Tornado,Personal hygiene items such as toothbrushes and toilet paper
+21,Wildfire,Maps of local evacuation routes and emergency shelters
+22,Wildfire,Air purifiers or respirators to filter out smoke particles
+23,Wildfire,Heat-resistant gloves for handling hot objects
+24,Wildfire,Garden hose or fire extinguishing equipment for small fires
+25,Wildfire,Emergency pet carriers or cages for evacuation
+26,Blizzard,High-energy snacks such as energy bars or trail mix
+27,Blizzard,Hand warmers or heated blankets
+28,Blizzard,Snow chains or traction devices for vehicles
+29,Blizzard,Entertainment items such as books or board games
+30,Blizzard,Reflective clothing or gear for visibility in low-light conditions
+31,Drought,Rainwater collection barrels or systems
+32,Drought,Drought-resistant plants for landscaping
+33,Drought,Energy-efficient appliances to reduce water usage
+34,Drought,Greywater recycling systems for household use
+35,Drought,Community water conservation programs and initiatives
+36,Tsunami,Waterproof pouches or containers for storing valuables
+37,Tsunami,Emergency whistles or air horns for alerting others
+38,Tsunami,Personal flotation devices or life jackets
+39,Tsunami,Solar-powered chargers for communication devices
+40,Tsunami,Pre-planned evacuation routes and meeting points for family members
+41,Volcanic Eruption,Respirators or masks to protect against ash inhalation
+42,Volcanic Eruption,Goggles or eye protection to shield from volcanic debris
+43,Volcanic Eruption,Long-sleeved clothing and gloves to protect skin from abrasive ash
+44,Volcanic Eruption,Emergency communication plan with family members and designated meeting points
+45,Volcanic Eruption,Portable air quality monitor to track air pollution levels
+46,Landslide,Emergency whistle or signaling device for attracting attention
+47,Landslide,Sturdy footwear for navigating unstable terrain
+48,Landslide,Rope or climbing gear for rescuing or self-evacuating
+49,Landslide,Personal locator beacon or GPS device for emergency communication
+50,Landslide,"Emergency supplies including water, food, and first aid kit in a waterproof container"
+51,Sinkhole,Ground-penetrating radar or detection equipment for monitoring ground stability
+52,Sinkhole,Portable barriers or fencing to cordon off dangerous areas
+53,Sinkhole,Geotechnical engineering assessment for evaluating risk and potential mitigation measures
+54,Sinkhole,Emergency evacuation plan with designated safe zones and escape routes
+55,Sinkhole,Emergency response team trained in search and rescue operations
+56,Heatwave,Portable fans or battery-operated cooling devices
+57,Heatwave,Hydration packs or electrolyte-enhanced drinks to prevent dehydration
+58,Heatwave,"Lightweight, loose-fitting clothing made of breathable fabric"
+59,Heatwave,Heat-resistant window coverings or shades to block out sunlight
+60,Heatwave,Community cooling centers or shelters for vulnerable populations
+61,Hailstorm,Vehicle shelters or carports for protecting vehicles from hail damage
+62,Hailstorm,Roof reinforcement or hail-resistant roofing materials for homes
+63,Hailstorm,Emergency repair kits for sealing leaks in roofs or windows
+64,Hailstorm,Protective headgear such as helmets or hard hats for outdoor activities
+65,Hailstorm,Insurance coverage specifically for hail damage to property
+66,Mudslide,Mudslide barriers or retaining walls to redirect or contain debris flow
+67,Mudslide,Geotechnical engineering assessment to identify high-risk areas and implement mitigation measures
+68,Mudslide,Emergency evacuation drills and communication systems for at-risk communities
+69,Mudslide,Soil stabilization measures such as planting vegetation or installing erosion control structures
+70,Mudslide,Emergency response teams trained in search and rescue operations in hazardous terrain
+71,Tropical Cyclone,Storm shutters or window covers to protect against high winds and flying debris
+72,Tropical Cyclone,Secure storage for outdoor furniture and loose objects to prevent damage or injury
+73,Tropical Cyclone,Backup power generator and fuel supply for essential appliances and medical devices
+74,Tropical Cyclone,Storm surge barriers or levees for coastal communities prone to flooding
+75,Tropical Cyclone,"Evacuation plan with designated shelters and transportation routes, including arrangements for pets and livestock"

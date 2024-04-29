@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filled Sections</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-8">
+
+    <div class="max-w-4xl mx-auto">
+        <div class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Tips</h2>
+            <ul class="list-disc pl-6">
+                {% for tip in tips %}
+                    <li class="mb-2">{{ tip.content }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Nutriments and Supplies</h2>
+            <ul class="list-disc pl-6">
+                {% for item in nutriments_and_supplies %}
+                    <li class="mb-2">{{ item.content }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div>
+            <h2 class="text-2xl font-semibold mb-4">Emergency Contacts</h2>
+            <ul>
+                {% for contact in emergency_contacts %}
+                    <li class="mb-2">
+                        <span class="font-semibold">{{ contact.name }}</span> - {{ contact.phone_number }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
+

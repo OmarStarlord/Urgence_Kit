@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Form</title>
+</head>
+<body>
+    <form action="{% url 'interface:fill_sections' %}" method="post">
+        {% csrf_token %}
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country">
+        <label for="type_of_catastrophe">Type of Catastrophe:</label>
+        <input type="text" id="type_of_catastrophe" name="type_of_catastrophe">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

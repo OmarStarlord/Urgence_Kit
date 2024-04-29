@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Signup</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 50%;
+      margin: 0 auto;
+      border: 2px solid #ccc;
+      padding: 20px;
+      display: flex;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+      background-color: white;
+    }
+
+    .col1 {
+      flex: 1;
+      padding: 0 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .col2 {
+      flex: 2;
+      padding: 0 20px;
+    }
+
+    [type=country],
+    input[type=city],
+    input[type=district],
+    input[type=text],
+    input[type=password],
+    select {
+      width: calc(100% - 20px);
+      padding: 8px;
+      margin: 4px 0;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: red;
+      color: white;
+      padding: 12px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: calc(50% - 20px);
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="col1">
+    </div>
+    <div class="col2">
+      <form action="{% url 'users:signup' %}" method="post" class="signup-form">
+        {% csrf_token %}
+        <input type="hidden" name="signup" value="1">
+        <h3>Create your account</h3>
+        <div>
+          <label for="fullname">Full Name</label>
+          <input type="text" placeholder="Enter fullname" name="fullname" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" placeholder="Enter email" name="email" required>
+        </div>
+        <div>
+          <label for="password">Create a password</label>
+          <input type="password" placeholder="*******" name="password" required>
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input type="text" placeholder="Enter phonenumber" name="phone" required>
+        </div>
+        <div class="localisation">
+          <label for="country">Country:</label>
+          <select name="country" required>
+            <option value="">Select Country</option>
+            <option value="m">Morocco</option>
+            <option value="f">France</option>
+            <option value="s">Spain</option>
+            <option value="g">Germany</option>
+          </select>
+          <label for="city">City:</label>
+          <input type="text" placeholder="Enter City" name="city" required>
+          <label for="district">Street name:</label>
+          <input type="text" placeholder="Enter street name" name="district" required>
+        </div>
+        <button type="submit">Create account</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

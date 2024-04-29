@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<style>
+  body,
+  html {
+    height: 100%;
+  }
+
+  .messages-box {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .messages-list {
+    padding-left: 0;
+  }
+
+  .message {
+    margin-bottom: 15px;
+    list-style: none;
+  }
+
+  .message-text {
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .sent {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+  }
+
+  .received {
+    background-color: #f1f0f0;
+    align-self: flex-start;
+  }
+
+  .message-form {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+  }
+
+  .message-input {
+    flex: 1;
+    border-radius: 0;
+    border-right: none;
+  }
+
+  .btn-send {
+    border-radius: 0;
+  }
+
+  .chat-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+</style>
+{% endblock %}
+
+
+{% block content %}
+<div>
+<nav>
+  <ul style="display: flex; flex-direction: row; justify-content: center; align-items: center; justify-content: space-between;">
+    <li><a href="{% url 'chatbot:chatbot_home' %}">Chatbot</a></li>
+    <li><a href="">Emergency</a></li>
+    <li><a href="">Profile</a></li>
+    <li><a href="">Logout</a></li>
+  </ul>
+</nav>
+</div>
+<div class="chat-container">
+  <div class="card flex-grow-1">
+    <div class="card-header bg-primary text-white">Chat</div>
+    <div class="card-body messages-box">
+    <ul class="list-unstyled messages-list">
+        {% for chat in chats %}
+            <li class="message {% if chat.user == request.user %}sent{% else %}received{% endif %}">
+                <div class="message-text">
+                    <div class="message-sender">
+                        <b>{% if chat.user == request.user %}URGENCEKIT CHATBOT{% else %}You{% endif %}</b>
+                    </div>
+                    <div class="message-content">
+                        {{ chat.message }}
+                    </div>
+                </div>
+            </li>
+            <li class="message {% if chat.user == request.user %}received{% else %}sent{% endif %}">
+                <div class="message-text">
+                    <div class="message-sender">
+                        <b>{% if chat.user == request.user %}AI Chatbot{% else %}URGENCEKIT CHATBOT{% endif %}</b>
+                    </div>
+                    <div class="message-content">
+                        {{ chat.response }}
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+    <br><br>
+    <br><br>
+    <br><br>
+  </div>
+  <form class="message-form" id="chat-form">
+    {% csrf_token %}
+    <div class="input-group">
+      <input type="text" name="message" class="form-control message-input" id="message-input"
+        placeholder="Type your message...">
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-primary btn-send">Send</button>
+      </div>
+    </div>
+  </form>
+
+  <script>
+    
+    document.getElementById('chat-form').addEventListener('submit', function (event) {
+      event.preventDefault(); 
+      sendMessage(); 
+    });
+
+    function sendMessage() {
+      var messageInput = document.getElementById('message-input').value; 
+      updateChat_test({response: messageInput});
+      var csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value; 
+
+      // AJAX request to send message to the server
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '{% url "chatbot:chatbot_home" %}', true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.setRequestHeader('X-CSRFToken', csrfToken);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+          var response = JSON.parse(xhr.responseText); // Parse the JSON response
+          updateChat(response); // Call function to update chat interface with response
+        }
+      };
+      xhr.send('message=' + encodeURIComponent(messageInput)); // Send message data
+    }
+
+    // Function to update chat interface with response
+    function updateChat(response) {
+      var messagesList = document.querySelector('.messages-list'); // Get messages list element
+      var newMessage = document.createElement('li'); // Create new list item for the response
+      newMessage.classList.add('message', 'sent'); // Add classes for styling
+      newMessage.innerHTML = `
+      <div class="message-text">
+        <div class="message-sender">
+          <b>URGENCEKIT CHATBOT</b>
+        </div>
+        <div class="message-content">
+          ${response.response}
+        </div>
+      </div>
+    `;
+      messagesList.appendChild(newMessage); // Append new message to messages list
+    }
+    function updateChat_test(response) {
+      var messagesList = document.querySelector('.messages-list'); // Get messages list element
+      var newMessage = document.createElement('li'); // Create new list item for the response
+      newMessage.classList.add('message', 'received'); // Add classes for styling
+      newMessage.innerHTML = `
+      <div class="message-text">
+        <div class="message-sender">
+          <b>You</b>
+        </div>
+        <div class="message-content">
+          ${response.response}
+        </div>
+      </div>
+    `;
+      messagesList.appendChild(newMessage); // Append new message to messages list
+    }
+  </script>
+</div>
+
+
+{% endblock %}
