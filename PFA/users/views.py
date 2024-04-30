@@ -46,7 +46,7 @@ def login(request):
                 request.session['user_email'] = user.email
 
                 
-                return redirect('chatbot:chatbot_home')  # Redirect to chatbot page upon successful login
+                return redirect('chatbot:chatbot_home')  
             else:
                 print("Invalid email or password.")
                 error_message = "Invalid email or password."
@@ -58,28 +58,47 @@ def login(request):
 
 def user_logout(request):
     logout(request)
-    return redirect('login')  # Redirect to login page upon logout
+    request.session.flush()
+    return redirect('users:login')  
 
 
 
 def edit_profile(request):
     user_id = request.session.get('user_id')
     if not user_id:
-        # Handle case where user_id is not in session
-        return render(request, 'error.html', {'message': 'User ID not found in session'})  # You can create a custom error template or handle this in your own way
+        return render(request, 'error.html', {'message': 'User ID not found in session'})
     
     try:
         user = CustomUser.objects.get(pk=user_id)
     except CustomUser.DoesNotExist:
-        # Handle case where user_id does not correspond to any user
-        return render(request, 'error.html', {'message': 'User not found'})  # You can create a custom error template or handle this in your own way
+        return render(request, 'error.html', {'message': 'User not found'})
     
     if request.method == 'POST':
-        form = ProfileEditForm(request.POST, instance=user)
-        if form.is_valid():
-            form.save()
-            return redirect('profile')  # Redirect to profile page after successful edit
-    else:
-        form = ProfileEditForm(instance=user)
+        # Handle form submission
+        # Retrieve form data from POST request
+        name = request.POST.get('name')
+        current_password = request.POST.get('current_password')
+        new_password = request.POST.get('new_password')
+        confirm_new_password = request.POST.get('confirm_new_password')
+        current_email = request.POST.get('current_email')
+        new_email = request.POST.get('new_email')
+        confirm_new_email = request.POST.get('confirm_new_email')
 
-    return render(request, 'edit_profile.html', {'form': form})
+        # Your logic to update user profile goes here
+        # For example:
+        if current_password == user.password:  # Assuming user.password stores the current password
+            # Update user information based on form data
+            user.name = name
+            user.email = new_email
+            # You may want to implement additional checks and validation here
+            # Save the updated user information
+            user.save()
+            return redirect('profile')  # Redirect to profile page after successful edit
+        else:
+            # Handle incorrect password scenario or any other validation errors
+            # For simplicity, let's render the edit_profile.html template again with an error message
+            error_message = "Incorrect password"
+            return render(request, 'edit_profile.html', {'error_message': error_message})
+
+    # If request method is GET, render the edit_profile.html template with user information
+    return render(request, 'edit_profile.html', {'user': user})

@@ -1,16 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
+{%  extends "base.html" %}
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .container {
+            width: 80%;
+            padding: 50px;
+            padding-bottom: 10px;
+            margin: 10vh auto;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            background-color: transparent;
+        }
+        .col2 {
+            flex: 2;
+            padding: 0 40px;
+        }
+        [type=country], input[type=city], input[type=district], input[type=text], input[type=password], select {
+            width: 100%;
+            padding: 8px;
+            margin: 4px 0;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            background-color: transparent;
+        }
+        button {
+            background-color: red;
+            color: white;
+            padding: 12px 20px; 
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: calc(50% - 20px);
+        }
+        form {
+            background-color: transparent;
+        }
+        h4 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: red;
+            font-weight: bold;
+            font-family: 'Verdana', sans-serif;
+        }
+        #video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 150%;
+            height: 200%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        /* Style the iframe to fit the video container */
+        #video-container iframe {
+            width: 150%; /* Use viewport width */
+            height: 100%; /* Use viewport height */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Edit Profile</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save Changes</button>
-    </form>
+    <div id="video-container">
+        <iframe src="https://www.youtube.com/embed/BJ75j1j-rUg?autoplay=1&mute=1&loop=1&playlist=BJ75j1j-rUg&controls=0&modestbranding=1&hd=1" frameborder="0" allowfullscreen ></iframe>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col2">
+                <form method="post">
+                    <h4>Change your Information here:</h4>
+                    {% csrf_token %}
+                    <label for="name">Change Name</label>
+                    <input type="text" placeholder="Full Name">
+                    <label for="password">Change Password</label>
+                    <input type="password" placeholder="Current password">
+                    <input type="password" placeholder="New password">
+                    <input type="password" placeholder="Confirm New password">
+                    <label for="email">Change email</label>
+                    <input type="email" placeholder="Current email">
+                    <input type="email" placeholder="New email">
+                    <input type="email" placeholder="Confirm New email"><br>
+                    <button type="submit">Save changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
-</html>
+
+{% endblock %}
