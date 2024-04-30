@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natural Disaster News</title>
+<style>
+/* CSS styles for the news container */
+#news-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+/* CSS styles for individual news items */
+.news-item {
+  margin-bottom: 15px;
+}
+
+.news-item h2 {
+  margin-bottom: 5px;
+}
+
+.news-item p {
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: #666;
+}
+</style>
+</head>
+<body>
+
+<div id="news-container">
+  <!-- News items will be dynamically added here -->
+</div>
+
+<script>
+// Define the URL for fetching natural events data from NASA EONET API
+const eonetUrl = 'ttps://eonet.gsfc.nasa.gov/api/v3/events ?limit=5&days=20&source=InciWeb&status=open';
+
+// Function to fetch natural events data from NASA EONET API
+async function fetchNaturalEvents() {
+  try {
+    const response = await fetch(eonetUrl);
+    const data = await response.json();
+    
+    // Check if the request was successful
+    if (response.ok) {
+      return data.events;
+    } else {
+      throw new Error(`Failed to fetch natural events: ${data.error}`);
+    }
+  } catch (error) {
+    console.error('Error fetching natural events:', error);
+    return null;
+  }
+}
+
+// Function to display natural events in a div
+async function displayNaturalEvents() {
+  const eventsContainer = document.getElementById('news-container');
+
+  // Clear previous event data
+  eventsContainer.innerHTML = '';
+
+  // Fetch natural events data
+  const events = await fetchNaturalEvents();
+
+  if (events && events.length > 0) {
+    events.forEach(event => {
+      const eventItem = document.createElement('div');
+      eventItem.classList.add('news-item');
+      eventItem.innerHTML = `
+        <h2>${event.title}</h2>
+        <p><strong>Date:</strong> ${new Date(event.geometries[0].date).toDateString()}</p>
+        <p><strong>Category:</strong> ${event.categories[0].title}</p>
+        <p><strong>Description:</strong> ${event.description}</p>
+        <a href="${event.sources[0].url}" target="_blank">Read more</a>
+      `;
+      eventsContainer.appendChild(eventItem);
+    });
+  } else {
+    // Display a message if no events are found
+    eventsContainer.innerHTML = '<p>No natural events found.</p>';
+  }
+}
+
+// Call the function to display natural events when the page loads
+window.addEventListener('load', displayNaturalEvents);
+
+</script>
+
+</body>
+</html>
