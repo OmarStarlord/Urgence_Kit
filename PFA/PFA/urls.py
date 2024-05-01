@@ -19,13 +19,13 @@ from chatbot import views as chatbot_views
 from users import views as users_views
 from interface import views as interface_views
 from mapping import views as mapping_views
+from home import views as home_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
     path('chatbot/', include('chatbot.urls')),  # Include the chatbot app URLs 
-    path('map', include('map.urls')),
-    path('map/', include('map.urls')),
     path('interface/', include('interface.urls')),
     path('mapping/', include('mapping.urls')),
+    path('home/', include('home.urls')),
 ]

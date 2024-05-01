@@ -50,10 +50,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'chatbot',
-    'map',
     'interface',
     'import_export',
     'mapping',
+    'home',
 ]
 
 MIDDLEWARE = [
