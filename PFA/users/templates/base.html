@@ -41,7 +41,7 @@
 
             </ul>
 
-            <ul class="anir_is_a_bitch">
+            <ul class="omar">
                 <li>
                     <a class="nav-link" href="{% url 'users:edit_profile' %}" style="color: red;">Account<span
                             class="sr-only"></span></a>
@@ -55,7 +55,7 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container-fluid"> <!-- Use container-fluid for full width -->
         {% block content %}
         {% endblock %}
     </div>
@@ -67,13 +67,11 @@
 
 </body>
 
-
 <style>
-    .anir_is_a_bitch{
-        display : flex;
+    .omar {
+        display: flex;
         flex-direction: row;
     }
-        
-
 </style>
+
 </html>
