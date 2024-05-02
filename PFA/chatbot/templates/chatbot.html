@@ -2,10 +2,14 @@
 
 {% block styles %}
 <style>
+  .bg-custom {
+    background-color: #b94343;
+  }
   body,
   html {
     height: 100%;
   }
+  
 
   .messages-box {
     flex: 1;
@@ -27,7 +31,7 @@
   }
 
   .sent {
-    background-color: #dcf8c6;
+    background-color: #b94343;
     align-self: flex-end;
   }
 
@@ -43,7 +47,7 @@
     left: 0;
     right: 0;
     padding: 10px;
-    background-color: #f8f9fa;
+    background-color: #b94343;
   }
 
   .message-input {
@@ -70,7 +74,7 @@
 </div>
 <div class="chat-container">
   <div class="card flex-grow-1">
-    <div class="card-header bg-primary text-white">Chat</div>
+    <div class="card-header bg-custom text-white">Chat</div>
     <div class="card-body messages-box">
     <ul class="list-unstyled messages-list">
         {% for chat in chats %}

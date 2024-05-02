@@ -1,21 +1,139 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <title>Home</title>
+    <style>
+       body {
+            background-image: url('https://unsplash.com/photos/vGu08RYjO-s/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MXx8ZW1lcmdlbmN5fGVufDB8MHx8fDE3MTQ2NTU0MTd8Mg&force=true');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding-top: 0px; /* Adjust padding to match the height of your navigation bar */
+            overflow: auto;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity here */
+        }
+            
+        .latest-news {
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .latest-news h2 {
+            margin-top: 0;
+        }
+        .latest-news ul {
+            list-style: none;
+            padding: 0;
+        }
+        .latest-news li {
+            margin-bottom: 20px;
+            /* border-bottom: 1px solid rgba(255, 255, 255, 0.3); Separator between news items */
+            padding-bottom: 20px;
+            transform: perspective(1000px) rotateY(10deg); /* 3D transformation */
+            transition: transform 0.5s, box-shadow 0.5s; /* Transition for smooth effect */
+            box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.3); /* Shadow effect with padding */
+            padding-left: 20px; /* Add space between text and shadow */
+        }
+        .latest-news li:hover {
+            transform: perspective(1000px) rotateY(0deg); /* Reverse the transformation on hover */
+            box-shadow: 30px 20px 40px rgba(0, 0, 0, 0.6); /* Shadow effect on hover with increased padding */
+        }
+        .latest-news h3 {
+            margin-top: 0;
+        }
+        .latest-news p {
+            margin-bottom: 10px;
+        }
+        .latest-news a {
+            color: #ffc107; /* Yellow color for links */
+            text-decoration: none;
+            transition: color 0.3s; /* Smooth color transition on hover */
+        }
+
+        .latest-news a:hover {
+            color: #ffea00; /* Brighter yellow color on hover */
+            text-decoration: underline;
+        }
+
+        .product-card a {
+            color: white; /* Blue color for links */
+            text-decoration: none;
+            transition: color 0.3s; /* Smooth color transition on hover */
+        }
+
+        .product-card a:hover {
+            color: white; /* Darker blue color on hover */
+            text-decoration: underline;
+        }
+        .product-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px; /* Reduce padding */
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            width: 80%; /* Adjust the width of the product card */
+            max-width: 300px; /* Set a maximum width */
+        }
+   
+   </style>
 </head>
 <body>
-    <h1>Welcome to the Home Page</h1>
+    <div class="background-overlay"></div>
+    <h1 class="mt-5">Welcome to the Home Page</h1>
+    <div class="container">
+        
 
-    <h2>Latest News</h2>
-    <ul>
-        {% for article in articles %}
-            <li>
-                <h3>{{ article.title }}</h3>
-                <p>{{ article.description }}</p>
-                <a href="{{ article.url }}" target="_blank">Read more</a>
-            </li>
-        {% endfor %}
-    </ul>
+        <div class="latest-news">
+            <h2>Latest News</h2><br>
+            <ul class="list-unstyled">
+                {% for article in articles %}
+                    <li>
+                        <h3>{{ article.title }}</h3>
+                        <p>{{ article.description }}</p>
+                        <a href="{{ article.url }}" target="_blank">Read more</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    
+    
+
+
+
+    
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript for adding dynamic effects
+        document.addEventListener("DOMContentLoaded", function() {
+            const newsItems = document.querySelectorAll(".latest-news li");
+            newsItems.forEach(function(item, index) {
+                setTimeout(function() {
+                    item.classList.add("active");
+                }, index * 200);
+            });
+        });
+    </script>
 </body>
 </html>
+{% endblock %}

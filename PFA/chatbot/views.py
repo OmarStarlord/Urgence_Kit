@@ -38,12 +38,12 @@ def ask_openai(message):
     return answer
 
 
-#@login_required(login_url='users:login')
+
 def chatbot(request):
     user_id = request.session.get('user_id')
     if not user_id:
         # Handle case where user_id is not in session
-        return JsonResponse({'error': 'User ID not found in session'}, status=400)
+        return redirect('users:login')
     
     try:
         chats = Chat.objects.filter(user_id=user_id)

@@ -1,10 +1,13 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, logout, login as auth_login
+from django.contrib.auth import authenticate, login as auth_login
 from .forms import SignupForm, LoginForm
 from .models import CustomUser
-from .backends import CustomUserAuthenticationBackend
 from chatbot.views import chatbot
 from .forms import ProfileEditForm
+
+from django.contrib.auth import logout
+
+
 
 
 
@@ -24,7 +27,7 @@ def signup(request):
             user.save()
             
 
-            return redirect('login')
+            return redirect('users:login')
     else:
         form = SignupForm()
 
@@ -41,12 +44,10 @@ def login(request):
             if user is not None:
                 auth_login(request, user)
                 print("User logged in successfully.")
-                #save session
+                # Save session
                 request.session['user_id'] = user.id
                 request.session['user_email'] = user.email
-
-                
-                return redirect('chatbot:chatbot_home')  
+                return redirect('home')  
             else:
                 print("Invalid email or password.")
                 error_message = "Invalid email or password."
@@ -56,11 +57,12 @@ def login(request):
 
     return render(request, 'login.html', {'form': form})
 
+
 def user_logout(request):
+    print("User logged out successfully.")
     logout(request)
     request.session.flush()
     return redirect('users:login')  
-
 
 
 def edit_profile(request):
@@ -90,8 +92,7 @@ def edit_profile(request):
             # Update user information based on form data
             user.name = name
             user.email = new_email
-            # You may want to implement additional checks and validation here
-            # Save the updated user information
+            
             user.save()
             return redirect('profile')  # Redirect to profile page after successful edit
         else:

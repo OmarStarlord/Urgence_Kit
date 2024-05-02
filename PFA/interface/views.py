@@ -1,14 +1,27 @@
 from django.shortcuts import render
 from .models import Tip, NutrimentAndSupply, EmergencyContact
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect
+
+
+
 
 def home(request):
-    return render(request, 'home.html')
+    user_id = request.session.get('user_id')
+    if not user_id:
+        # Handle case where user_id is not in session
+        return redirect('users:login')
+    else:
+        return render(request, 'home.html')
+
+
+
 
 def fill_sections(request):
     user_id = request.session.get('user_id')
     if not user_id:
         # Handle case where user_id is not in session
-        return JsonResponse({'error': 'User ID not found in session'}, status=400)
+        return redirect('users:login')
     else:
         if request.method == 'POST':
             country = request.POST.get('country')
