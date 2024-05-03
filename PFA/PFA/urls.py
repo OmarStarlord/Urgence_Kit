@@ -24,7 +24,7 @@ from home import views as home_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
-    path('chatbot/', include('chatbot.urls')),  # Include the chatbot app URLs 
+    path('chatbot/', include('chatbot.urls')), 
     path('interface/', include('interface.urls')),
     path('mapping/', include('mapping.urls')),
     path('home/', include('home.urls')),
