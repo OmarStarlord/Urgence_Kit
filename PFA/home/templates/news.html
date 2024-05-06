@@ -2,15 +2,32 @@
 
 
 {% block content %}
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="container"></div>
+    <h1 class="mt-5">Welcome to the Home Page</h1>
+    <div class="container">
+        
+
+        <div class="latest-news">
+            <h2>Latest News</h2><br>
+            <ul class="list-unstyled">
+                {% for article in articles %}
+                    <li>
+                        <h3>{{ article.title }}</h3>
+                        <p>{{ article.description }}</p>
+                        <a href="{{ article.url }}" target="_blank">Read more</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    
+    
 
 
-    <title>Home</title>
+
+    
+    <!-- Bootstrap JS (optional) -->
     <style>
        body {
             background-image: url('https://unsplash.com/photos/vGu08RYjO-s/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MXx8ZW1lcmdlbmN5fGVufDB8MHx8fDE3MTQ2NTU0MTd8Mg&force=true');
@@ -93,35 +110,7 @@
             max-width: 300px; /* Set a maximum width */
         }
    
-   </style>
-</head>
-<body>
-    <div class="background-overlay"></div>
-    <h1 class="mt-5">Welcome to the Home Page</h1>
-    <div class="container">
-        
-
-        <div class="latest-news">
-            <h2>Latest News</h2><br>
-            <ul class="list-unstyled">
-                {% for article in articles %}
-                    <li>
-                        <h3>{{ article.title }}</h3>
-                        <p>{{ article.description }}</p>
-                        <a href="{{ article.url }}" target="_blank">Read more</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-
-    
-    
-
-
-
-    
-    <!-- Bootstrap JS (optional) -->
+   </style></style>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         // JavaScript for adding dynamic effects

@@ -31,7 +31,7 @@ def home(request):
 
         for article_data in news_data:
             title = article_data.get('title', '').lower()
-            description = article_data.get('description', '').lower()
+            
 
             if any(keyword in title for keyword in keywords):
                 natural_disaster_articles.append(article_data)
