@@ -21,7 +21,7 @@ def home(request):
            f'q={keyword_query}&'
            f'from={from_date}&'
            'sortBy=popularity&'
-           'apiKey=31b53b6c9b454900bbc790db174679ac')
+           'apiKey=') #change to api key / removed it for safety
 
     response = requests.get(url)
 
